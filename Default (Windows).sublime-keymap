@@ -33,7 +33,11 @@
   { "keys": ["ctrl+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
 
   // alt+c to focus currently open file in the sidebar
-  {
-    "keys": ["alt+c"], "command": "reveal_in_side_bar"
-  }
+  { "keys": ["alt+c"], "command": "reveal_in_side_bar" },
+
+  // ctrl+b to toggle sidebar
+  { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+
+  // ctrl+shift+s to save all
+  { "keys": ["ctrl+shift+s"], "command": "save_all" },
 ]
