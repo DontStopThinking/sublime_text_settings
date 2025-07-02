@@ -1,0 +1,27 @@
+{
+    "theme": "Adaptive.sublime-theme",
+    "themed_title_bar": false,
+    "color_scheme": "Monokai.sublime-color-scheme",
+    "font_size": 11,
+    "font_face": "Cascadia Code",
+    "vintage_start_in_command_mode": false,
+    "caret_extra_top": 1,
+    "caret_extra_bottom": 1,
+    "caret_extra_width": 1,
+    "trim_trailing_white_space_on_save": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "match_brackets_angle": true,
+    "indent_guide_options": ["draw_normal", "draw_active", "solid"],
+    "drag_text": false,
+    "bold_folder_labels": true,
+    "rulers": [[110, "stippled"]],
+    "ignored_packages":
+    [
+        "Vintage",
+    ],
+    "index_files": true,
+    "dark_color_scheme": "Monokai.sublime-color-scheme",
+    "light_color_scheme": "Celeste.sublime-color-scheme",
+    "remember_open_folders": false,
+    "remember_workspace": false,
+}

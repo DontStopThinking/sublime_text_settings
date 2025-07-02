@@ -1,0 +1,39 @@
+[
+  { "keys": ["ctrl+["], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+]"], "command": "focus_group", "args": { "group": 1 } },
+
+  // alt + up to swap current line with the line above
+  { "keys": ["alt+up"], "command": "swap_line_up" },
+
+  // alt + down to swap current line with the line below
+  { "keys": ["alt+down"], "command": "swap_line_down" },
+
+  // ctrl+d to duplicate current line
+  { "keys": ["ctrl+d"], "command": "duplicate_line" },
+
+  // ctrl + up to move cursor to previous empty line
+  { "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false } },
+
+  // ctrl + down to move cursor to next empty line
+  { "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true } },
+
+  // ctrl + shift + up to select all text upto previous empty line
+  { "keys": ["ctrl+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true } },
+
+  // ctrl + shift + down to select all text upto next empty line
+  { "keys": ["ctrl+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true } },
+
+    // alt + z to toggle word wrap in all views
+  { "keys": ["alt+z"], "command": "shantanu_toggle_word_wrap_all_views" },
+
+  // ctrl + alt + m to toggle mini-map
+  { "keys": ["ctrl+alt+m"], "command": "toggle_minimap" },
+
+  { "keys": ["ctrl+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+  { "keys": ["ctrl+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+
+  // alt+c to focus currently open file in the sidebar
+  {
+    "keys": ["alt+c"], "command": "reveal_in_side_bar"
+  }
+]
