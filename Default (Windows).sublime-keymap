@@ -1,6 +1,6 @@
 [
-  { "keys": ["ctrl+["], "command": "focus_group", "args": { "group": 0 } },
-  { "keys": ["ctrl+]"], "command": "focus_group", "args": { "group": 1 } },
+  // alt+w to move cursor to next vertical split
+  { "keys": ["alt+w"], "command": "focus_neighboring_group" },
 
   // alt + up to swap current line with the line above
   { "keys": ["alt+up"], "command": "swap_line_up" },
@@ -12,19 +12,48 @@
   { "keys": ["ctrl+d"], "command": "duplicate_line" },
 
   // ctrl + up to move cursor to previous empty line
-  { "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false } },
+  {
+    "keys": ["ctrl+up"],
+    "command": "move",
+    "args": {"by": "stops", "empty_line": true, "forward": false }
+  },
 
   // ctrl + down to move cursor to next empty line
-  { "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true } },
+  {
+    "keys": ["ctrl+down"],
+    "command": "move",
+    "args": {"by": "stops", "empty_line": true, "forward": true }
+  },
+
+  // alt+a to move cursor to beginning of line
+  { "keys": ["alt+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+
+  // alt+e to move cursor to end of line
+  { "keys": ["alt+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
+  // alt+d to delete current line
+  {
+    "keys": ["alt+d"],
+    "command": "run_macro_file",
+    "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}
+  },
 
   // ctrl + shift + up to select all text upto previous empty line
-  { "keys": ["ctrl+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true } },
+  {
+    "keys": ["ctrl+shift+up"],
+    "command": "move",
+    "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true }
+  },
 
   // ctrl + shift + down to select all text upto next empty line
-  { "keys": ["ctrl+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true } },
+  {
+    "keys": ["ctrl+shift+down"],
+    "command": "move",
+    "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true }
+  },
 
-    // alt + z to toggle word wrap in all views
-  { "keys": ["alt+z"], "command": "shantanu_toggle_word_wrap_all_views" },
+  // alt + z to toggle word wrap in all views
+  { "keys": ["alt+z"], "command": "shantanu_toggle_word_wrap_in_all_views" },
 
   // ctrl + alt + m to toggle mini-map
   { "keys": ["ctrl+alt+m"], "command": "toggle_minimap" },
@@ -35,9 +64,35 @@
   // alt+c to focus currently open file in the sidebar
   { "keys": ["alt+c"], "command": "reveal_in_side_bar" },
 
+  // alt+g to go to definition
+  { "keys": ["alt+g"], "command": "goto_definition" },
+
+  // alt+o to switch between header/source
+  { "keys": ["alt+o"], "command": "shantanu_switch_header_source" },
+
   // ctrl+b to toggle sidebar
   { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
 
   // ctrl+shift+s to save all
   { "keys": ["ctrl+shift+s"], "command": "save_all" },
+
+  // ctrl+alt+right to move tab to right split
+  {
+    "keys": ["ctrl+alt+right"],
+    "command": "move_to_neighboring_group",
+    "args": {"forward": true }
+  },
+
+  // ctrl+alt+left to move tab to left split
+  {
+    "keys": ["ctrl+alt+left"],
+    "command": "move_to_neighboring_group",
+    "args": {"forward": false }
+  },
+
+  // ctrl+alt+up to scroll up
+  { "keys": ["ctrl+alt+up"], "command": "scroll_lines", "args": {"amount": 2.0 } },
+
+  // ctrl+alt+down to scroll down
+  { "keys": ["ctrl+alt+down"], "command": "scroll_lines", "args": {"amount": -2.0 } },
 ]
