@@ -1,4 +1,4 @@
-import os.path
+import os
 import sublime
 import sublime_plugin
 
@@ -50,3 +50,5 @@ class ShantanuSwitchHeaderSource(sublime_plugin.WindowCommand):
                     self.window.open_file(new_path, flags=flags)
                     self.window.run_command("move_to_neighboring_group")
                 break
+            else:
+                sublime.status_message(f"{os.path.basename(new_path)} not found!")
