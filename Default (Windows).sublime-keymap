@@ -70,6 +70,9 @@
   // alt+o to switch between header/source
   { "keys": ["alt+o"], "command": "shantanu_switch_header_source" },
 
+  // alt+shift+s to go to symbol
+  { "keys": ["alt+shift+s"], "command": "goto_symbol_in_project" },
+
   // ctrl+b to toggle sidebar
   { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
 
