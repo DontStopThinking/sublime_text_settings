@@ -52,3 +52,40 @@ class ShantanuSwitchHeaderSource(sublime_plugin.WindowCommand):
                 break
             else:
                 sublime.status_message(f"{os.path.basename(new_path)} not found!")
+
+
+class ShantanuFindUnderExpandBackwardCommand(sublime_plugin.TextCommand):
+    """
+    Select multiple occurrences of selection, except in backwards direction.
+    """
+    def run(self, edit):
+        view = self.view
+        selections = list(view.sel())
+
+        for region in reversed(selections):
+            word_region = view.word(region.begin())
+            word = view.substr(word_region)
+
+            # Find the previous occurrence of the word
+            regions = view.find_all(word, sublime.LITERAL)
+            previous_region = None
+
+            for r in reversed(regions):
+                if r.end() < region.begin():  # Find a region that is before the current selection
+                    previous_region = r
+                    break
+
+            if previous_region:
+                view.sel().add(previous_region)
+
+
+class ShantanuMoveToNeighboringGroupWithCreate(sublime_plugin.WindowCommand):
+    def run(self, forward=True):
+        if not self.window.active_view():
+            return
+
+        if self.window.num_groups() == 1:
+            print("num_groups() is 1")
+            self.window.set_layout({ 'cols': 2 })
+
+        self.window.run_command("move_to_neighboring_group", { "forward": forward })

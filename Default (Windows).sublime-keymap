@@ -82,14 +82,14 @@
   // ctrl+alt+right to move tab to right split
   {
     "keys": ["ctrl+alt+right"],
-    "command": "move_to_neighboring_group",
+    "command": "shantanu_move_to_neighboring_group_with_create",
     "args": {"forward": true }
   },
 
   // ctrl+alt+left to move tab to left split
   {
     "keys": ["ctrl+alt+left"],
-    "command": "move_to_neighboring_group",
+    "command": "shantanu_move_to_neighboring_group_with_create",
     "args": {"forward": false }
   },
 
@@ -98,4 +98,10 @@
 
   // ctrl+alt+down to scroll down
   { "keys": ["ctrl+alt+down"], "command": "scroll_lines", "args": {"amount": -2.0 } },
+
+  // alt+shift+. to select multiple occurrences of selected word.
+  { "keys": ["alt+shift+."], "command": "find_under_expand" },
+
+  // alt+shift+, to select multiple occurrences of selected word backward from the cursor.
+  { "keys": ["alt+shift+,"], "command": "shantanu_find_under_expand_backward" },
 ]

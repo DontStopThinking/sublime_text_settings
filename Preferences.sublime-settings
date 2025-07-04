@@ -18,6 +18,7 @@
     "indent_guide_options": [ "draw_normal", "draw_active", "solid" ],
     "bold_folder_labels": true,
     "rulers": [[ 110, "stippled" ]],
+    "enable_tab_scrolling": false,
 
     // sidebar
     "preview_on_click": true,
@@ -26,9 +27,11 @@
     "trim_trailing_white_space_on_save": "all",
     "ensure_newline_at_eof_on_save": true,
     "drag_text": false,
+    "shift_tab_unindent": true,
 
-    // indexing
+    // autocomplete
     "index_files": true,
+    "auto_complete_cycle": true,
 
     // remember
     "remember_open_folders": false,
