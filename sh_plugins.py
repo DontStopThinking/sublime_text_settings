@@ -47,11 +47,11 @@ class ShantanuSwitchHeaderSource(sublime_plugin.WindowCommand):
                     self.window.focus_view(existing_view) # If the file is already open, then just focus on it
                 else:
                     # If its not open, then open it in the neighboring group
-                    self.window.open_file(new_path, flags=flags)
+                    self.window.open_file(new_path)
                     self.window.run_command("move_to_neighboring_group")
                 break
-            else:
-                sublime.status_message(f"{os.path.basename(new_path)} not found!")
+        else:
+            sublime.status_message(f"{os.path.basename(root)}.{target_exts} not found.")
 
 
 class ShantanuFindUnderExpandBackwardCommand(sublime_plugin.TextCommand):
